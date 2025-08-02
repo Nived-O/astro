@@ -17,7 +17,7 @@ A modern, responsive user registration system built with Django REST API, HTML, 
 ## Technology Stack
 
 - **Backend**: Django 4.2.7, Django REST Framework
-- **Database**: SQLite (development), MySQL (production ready)
+- **Database**: MySQL (configured and running)
 - **Frontend**: HTML5, CSS3, JavaScript (ES6+)
 - **Styling**: Custom CSS with modern design patterns
 - **Icons**: Font Awesome
@@ -141,16 +141,22 @@ registration_project/
 
 ## Database Configuration
 
-### SQLite (Default - Development)
-Already configured and ready to use.
+### MySQL (Currently Active)
+The application is configured to use MySQL with the following setup:
+- **Database**: `registration_db`
+- **User**: `django_user`
+- **Password**: `password`
+- **Host**: `localhost`
+- **Port**: `3306`
 
-### MySQL (Production)
-1. Install MySQL server
-2. Create database: `CREATE DATABASE registration_db;`
-3. Update `.env` file with MySQL credentials
-4. Uncomment MySQL configuration in `settings.py`
-5. Install MySQL client: `pip install mysqlclient`
-6. Run migrations: `python manage.py migrate`
+**Database Tables Created:**
+- `custom_user` - Custom user model with extended fields
+- Standard Django tables (auth, admin, sessions, etc.)
+
+**MySQL Connection Status:** ✅ Active and Running
+
+### SQLite (Alternative - Available)
+SQLite configuration is available in `settings.py` (commented out) for development backup.
 
 ## Customization
 
